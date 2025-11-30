@@ -1,0 +1,83 @@
+white_paper:
+  title: "FLOPS-Protokoll & FLOPSGenesisNode"
+  author: "Audit-sealed Referenz"
+  date: "November 2025"
+
+  sections:
+    - name: "Einleitung"
+      content: >
+        Der aktuelle KI-Boom hat zu einem massiven Anstieg der Nachfrage nach Rechenleistung geführt.
+        Das FLOPS-Protokoll und der FLOPSGenesisNode adressieren diese Herausforderung durch eine
+        dezentrale Infrastruktur, die Skalierbarkeit, Transparenz und demokratisierten Zugang ermöglicht.
+
+    - name: "FLOPS-Protokoll"
+      subsections:
+        - title: "Bündelung von Rechenressourcen"
+          content: "Ähnlich wie frühes Bitcoin-Mining, jedoch für KI-Trainingsaufgaben."
+        - title: "Governance-Struktur"
+          content: "Trennung von Credits (Belohnung für Rechenleistung) und Governance-Token (Stimmrechte)."
+        - title: "DAO-Mechanismen"
+          content: "Community entscheidet über Treasury und Strategie, alle Entscheidungen sind on-chain dokumentiert."
+
+    - name: "Roadmap bis 2026"
+      roadmap:
+        - quarter: "Q2 2025"
+          milestone: "Token-Auktion"
+          details: "FDV 171 Mio. USD"
+        - quarter: "Q3 2025"
+          milestone: "Governance-Framework"
+          details: "Aktivierung DAO"
+        - quarter: "Q4 2025"
+          milestone: "Mining-Strategien"
+          details: "Dezentrales KI-Mining"
+        - quarter: "Q1 2026"
+          milestone: "Wertsteigerung"
+          details: "Buybacks, Burns, Revenue-Sharing"
+
+    - name: "FLOPSGenesisNode"
+      content: >
+        Der GenesisNode markiert den Startpunkt des Protokolls und bietet hohe Anreize für frühe Teilnehmer.
+        Im Kontext von über 30 großskaligen Modellen (z.B. GPT-4) mit Trainingskosten von mehreren
+        zehn Millionen USD wird er zum ökonomischen Anker des Netzwerks.
+
+    - name: "Vorteile dezentraler KI-Infrastruktur"
+      advantages:
+        - "Skalierbarkeit: viele kleine Einheiten bewältigen große Aufgaben."
+        - "Resilienz: weniger anfällig für Ausfälle einzelner Knoten."
+        - "Demokratisierung: Zugang nicht nur für große Anbieter."
+        - "Energieeffizienz: Nutzung ungenutzter Ressourcen, Integration erneuerbarer Energien."
+
+    - name: "Herausforderungen"
+      challenges:
+        - "Proof of Training"
+        - "Zero-Knowledge-Proofs"
+        - "Schutz geistigen Eigentums"
+        - "Governance-Risiken"
+
+    - name: "Vergleich mit ähnlichen Projekten"
+      comparison:
+        - project: "Pi Network"
+          focus: "Alltagsgeräte"
+          note: "große Nutzerbasis"
+        - project: "Towns"
+          focus: "Governance"
+          note: "zweistufiges Delegationsmodell"
+        - project: "Bittensor"
+          focus: "KI-Training"
+          note: "dezentrale Validierung"
+        - project: "Render"
+          focus: "Rendering"
+          note: "GPU-Sharing für Grafik & KI"
+
+    - name: "Technische Architektur & Nachhaltigkeit"
+      content: >
+        On-Chain: Governance, Belohnungsverteilung.
+        Off-Chain: effizientes KI-Training, Datenmanagement.
+        Nachhaltigkeit: Nutzung ungenutzter Ressourcen, Abwärmenutzung, erneuerbare Energien.
+
+    - name: "Marktchancen & gesellschaftliche Bedeutung"
+      content: >
+        Das FLOPS-Protokoll positioniert sich im DePIN-Sektor, dessen Marktwert von 30--50 Mrd. USD (2025)
+        auf 3,5 Bio. USD (2028) prognostiziert wird. Es fördert die Demokratisierung von KI, schafft neue
+        Einnahmequellen und stärkt die gesellschaftliche Teilhabe.
+
