@@ -1,0 +1,64 @@
+/* ===== CoreCraftSystems Dark Style ===== */
+
+body {
+  background-color: #121212; /* tiefes Dunkelgrau */
+  color: #CCCCCC;            /* Standard-Schrift hellgrau */
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.6;
+}
+
+/* Überschriften */
+h1, h2, h3 {
+  color: #B0B0B0; /* silberne Schrift */
+  text-shadow: 0 0 6px #2A2A2A; /* subtiler metallischer Glow */
+  letter-spacing: 1px;
+}
+
+/* Links */
+a {
+  color: #4A90E2; /* gedämpftes Blau */
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #E0E0E0; /* heller beim Hover */
+  text-shadow: 0 0 8px #3A5F5F; /* metallischer Glow */
+}
+
+/* Buttons */
+button {
+  background-color: #1E1E1E;
+  border: 1px solid #3A5F5F;
+  color: #CCCCCC;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+/* Panels / Container */
+.panel {
+  background-color: #1A1A1A;
+  border: 1px solid #2F2F2F;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+/* Audit-Labels */
+.audit-active {
+  color: #4A90E2; /* Blau für aktive Module */
+}
+
+.audit-static {
+  color: #B0B0B0; /* Silber für statische Dokumentation */
+}
+
+.audit-complete {
+  color: #8C7853; /* Bronze für abgeschlossene Rituale */
+}
