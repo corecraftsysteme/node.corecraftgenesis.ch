@@ -3,19 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CoreCraft Genesis Node — Audit-sealed Genesis Validator</title>
-  <meta name="description" content="CoreCraft Genesis Node — Audit-sealed Genesis Validator, Standort Effretikon, Schweiz. Transparente Artefakte, Snapshots und reproduzierbare Prüfwerte." />
+  <title>CoreCraft Genesis Node — Chain2025 Viewer</title>
+  <meta name="description" content="CoreCraft Genesis Node — Audit-sealed Genesis Validator. Chain2025 Viewer: Forschung und Unternehmertum. Transparente, auditierbare Wertflüsse." />
   <style>
     :root{
       --bg:#0f1316; --panel:#15191d; --muted:#9aa6b3; --text:#e6eef6; --accent:#8fb0d6; --line:#23282d;
-      --card:#171b20; --chip:#20262b; --good:#89b38a;
+      --card:#171b20; --chip:#20262b; --good:#89b38a; --accent-2:#7aa0c8;
     }
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;padding:28px}
-    .wrap{max-width:1100px;margin:0 auto}
-    header{display:flex;align-items:flex-start;gap:18px;margin-bottom:18px}
-    header h1{margin:0;font-size:20px;color:var(--accent)}
-    header p{margin:2px 0 0;color:var(--muted)}
+    .wrap{max-width:1200px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
+    .brand {display:flex;gap:14px;align-items:center}
+    .brand h1{margin:0;font-size:20px;color:var(--accent)}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+    .controls {display:flex;gap:10px;align-items:center}
+    .btn {background:linear-gradient(180deg,var(--chip),#2a3137);color:var(--text);border:1px solid var(--line);padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;cursor:pointer}
+    .btn:hover{background:#2f373f}
     .card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:14px}
     h2{color:var(--accent);margin:0 0 8px}
     h3{color:var(--muted);margin:0 0 8px}
@@ -23,148 +27,162 @@
     ul{margin:8px 0 12px 18px;color:var(--text)}
     li{margin:6px 0}
     .meta{font-family:ui-monospace,monospace;color:var(--muted);font-size:13px;background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.02)}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:14px}
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:14px}
     .right .card{position:sticky;top:28px}
     .audit-log{background:#0b0f12;border:1px solid #1f262b;padding:10px;border-radius:8px;color:var(--muted);font-family:ui-monospace,monospace;font-size:13px;max-height:320px;overflow:auto}
     .actions{display:flex;gap:8px;margin-top:10px}
-    button{background:#1f262b;color:var(--text);border:1px solid #2b3339;padding:8px 10px;border-radius:6px;cursor:pointer}
-    button:hover{background:#2b3339}
     a{color:var(--accent);text-decoration:none}
     .products{display:grid;grid-template-columns:1fr 1fr;gap:8px}
     .product{background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.02);font-size:14px}
     footer{margin-top:18px;color:var(--muted);font-size:13px}
     .notice{background:#0e1620;border-left:4px solid var(--accent);padding:10px;border-radius:6px;margin-bottom:12px;color:var(--muted)}
+    .section-title {display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .small {font-size:13px;color:var(--muted)}
+    .embed-medium {background:#0b0f12;border:1px solid #1f262b;border-radius:8px;padding:8px}
+    .edge-list {display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .edge-item {background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.02)}
     @media (max-width:980px){.grid{grid-template-columns:1fr}.right .card{position:static}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div>
-        <h1>CoreCraft Genesis Node</h1>
-        <p>Audit-sealed Genesis Validator — Standort Effretikon, Schweiz. Transparente Artefakte, Snapshots und reproduzierbare Prüfwerte.</p>
+      <div class="brand">
+        <div>
+          <h1>Chain2025 — Viewer</h1>
+          <p>Forschung und Unternehmertum. Transparente, auditierbare Wertflüsse.</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <!-- Design öffnen (Canva) -->
+        <!-- Ersetzt mit dem von dir genannten Canva-Link -->
+        <a class="btn" href="https://www.canva.com/design/DAG6RU7Hdgg/gaJmTc33dFrv_bQxkFgU6A/edit" target="_blank" rel="noopener">Design öffnen</a>
+
+        <!-- Blog & Wissensplattform -->
+        <a class="btn" href="https://blog.corecraftgenesis.ch" target="_blank" rel="noopener">CoreCraft Genesis Blog</a>
+
+        <!-- Medium Einbindung (Beispiel) -->
+        <a class="btn" href="https://medium.com/corecraftgenesis" target="_blank" rel="noopener">Medium: Chain2025</a>
       </div>
     </header>
 
     <div class="notice">
-      <strong>Wichtig</strong> Ersetze alle Platzhalter (Validator‑Adresse, IPFS‑CIDs, GitHub‑Links) bevor die Seite live geht. Stelle sicher, dass HTTPS/TLS aktiviert ist und die Seite über HSTS ausgeliefert wird.
+      <strong>Hinweis</strong>: Ersetze die Beispiel‑Werte (Validator‑Adresse, GitHub, IPFS‑CIDs) durch deine echten Daten. HTTPS/TLS und HSTS sind Voraussetzung.
     </div>
 
     <div class="grid">
       <main>
-        <section class="card" id="intro">
-          <h2>Einführung</h2>
-          <p>Unsere Genesis Node ist ein transparentes, audit-sealed Referenzobjekt, das als verifizierbarer Startpunkt der Chain dient. Jede veröffentlichte Datei ist mit kryptographischen Hashes versehen, sodass jede Prüferin und jeder Prüfer lokal die Integrität der Artefakte bestätigen kann. Die Veröffentlichung verfolgt das Ziel, ein nachvollziehbares, prüfbares Archiv bereitzustellen, nicht eine zentrale Autorität.</p>
-          <p class="meta"><strong>Technische Kernaussagen:</strong> Jede Artefaktdatei ist signiert und mit Hashwerten versehen. Prüfungen sind lokal reproduzierbar und dokumentiert. Ergebnisse werden in einem append-only Audit-Log festgehalten.</p>
-
-          <h3>Produkte und Artefakte</h3>
-          <div class="products">
-            <div class="product"><strong>Manifest</strong> — <code>genesis.json</code> mit Chain-ID, Parametern und Metadaten.</div>
-            <div class="product"><strong>Audit-sealed IP-Logs</strong> — zeitgestempelte Verbindungsprotokolle für Replikation.</div>
-            <div class="product"><strong>Hardwarebeschreibung</strong> — CPU, RAM, Storage, Netzwerktopologie, Firmware‑Hashes.</div>
-            <div class="product"><strong>Chain-Snapshots</strong> — versionierte Zustandsabbilder mit Hashes.</div>
-            <div class="product"><strong>IPFS-CIDs</strong> — optionale externe Referenzen zur Verifikation.</div>
+        <section class="card" id="manifest">
+          <div class="section-title">
+            <h2>📘 Manifest // CoreCraftGenesis</h2>
+            <span class="small">Audit-sealed Artefakte, Poster und narrative Kits</span>
           </div>
-        </section>
 
-        <section class="card" id="historical">
-          <h2>Historischer Bezug</h2>
-          <p>Der Bitcoin Genesis Block (3. Januar 2009) ist der kulturelle und technische Ursprung vieler Blockchain‑Projekte. Unsere Genesis Node folgt dieser Tradition, indem sie einen klar definierten Startpunkt dokumentiert, der durch Chain‑ID, Genesis‑Timestamp und Validator‑Logik festgelegt ist. Diese Dokumentation ermöglicht historische Nachvollziehbarkeit und technische Reproduzierbarkeit.</p>
-          <p class="meta"><strong>Technische Kernaussagen:</strong> Der Genesis‑Zustand ist unveränderlich dokumentiert. Zeitstempel und Parameter sind Teil der auditierbaren Metadaten. Validator‑Logik stellt Konsistenz der ersten Blöcke sicher.</p>
+          <p><strong>Genesis‑Echo · Chain2025 · Mars Network · Manifeste</strong></p>
+          <p>Alle Artefakte sind modular verlinkt und audit‑sealed dokumentiert. Du kannst sie direkt in deine Genesis‑ oder Chain2025‑Workflows integrieren.</p>
 
-          <h3>Produkte und Artefakte</h3>
-          <div class="products">
-            <div class="product"><strong>Chain-ID</strong> — <code>200624</code> (eindeutige Kennung).</div>
-            <div class="product"><strong>Genesis-Timestamp</strong> — <code>0x00</code> (audit-sealed).</div>
-            <div class="product"><strong>Validator-Adresse</strong> — <code>[VALIDATOR_ADDRESS_PLACEHOLDER]</code> (eintragen und signieren).</div>
-            <div class="product"><strong>DNSSeed</strong> — <code>dnsseed.corecraftgenesis.ch</code> für Seed‑Verteilung.</div>
-            <div class="product"><strong>Standort-Metadaten</strong> — Effretikon, Schweiz; Geo‑IP und Impressumsdaten.</div>
-          </div>
-        </section>
-
-        <section class="card" id="injection">
-          <h2>Injektion audit-sealed Artefakte</h2>
-          <p>Injektion bezeichnet die kontrollierte Einspeisung von Seed‑Informationen, Snapshots und Artefakten in das Netzwerk. Jede Injektion ist öffentlich, lokal prüfbar und mit unseren Prüfwerten abgleichbar, sodass sie als Vertrauensanker fungiert. Injektionen erzeugen automatisch Audit‑Einträge, die unveränderlich gespeichert werden.</p>
-          <p class="meta"><strong>Technische Kernaussagen:</strong> Seed‑Informationen werden über DNSSeed verteilt. Snapshots sind versioniert und mit Hashes versehen. Jede Injektion erzeugt einen append-only Audit‑Eintrag.</p>
-
-          <h3>Produkte und Artefakte</h3>
-          <div class="products">
-            <div class="product"><strong>Öffentliche IP-Logs</strong> — zeitgestempelte Verbindungsprotokolle mit Hashes.</div>
-            <div class="product"><strong>Systemprofil</strong> — detaillierte Hardwarebeschreibung und Firmware‑Hashes.</div>
-            <div class="product"><strong>Chain-Snapshots</strong> — vollständige Zustandsabbilder, versioniert.</div>
-            <div class="product"><strong>Manifest</strong> — <code>genesis.json</code> (audit-sealed, signiert).</div>
-            <div class="product"><strong>Externe Signaturen</strong> — optionale Signaturen Dritter zur zusätzlichen Verifikation.</div>
-          </div>
-        </section>
-
-        <section class="card" id="separation">
-          <h2>Abgrenzung</h2>
-          <p>Dieses Projekt ist technisch und rechtlich klar vom Mars‑networks Testnet „ares-1“ abgegrenzt. Unsere Chain‑ID, Genesis‑Parameter und Validatorstruktur sind eigenständig definiert und audit-sealed dokumentiert, sodass keine Verwechslung oder unbeabsichtigte Kompatibilität entsteht. Abgrenzungsdokumente sind Teil der veröffentlichten Artefakte.</p>
-          <p class="meta"><strong>Technische Kernaussagen:</strong> Jede Chain hat eigene Parameter und IDs. Validatorstrukturen sind nicht übertragbar. Artefakte sind eindeutig und nicht kompatibel mit fremden Netzwerken.</p>
-
-          <h3>Produkte und Artefakte</h3>
-          <div class="products">
-            <div class="product"><strong>CoreCraft Chain-ID</strong> — <code>200624</code> (eindeutig).</div>
-            <div class="product"><strong>Genesis-Parameter</strong> — dokumentierte Konsensus- und Netzwerkparameter.</div>
-            <div class="product"><strong>Validator-Logs</strong> — audit-sealed Betriebsprotokolle.</div>
-            <div class="product"><strong>Standort-Metadaten</strong> — Effretikon, Schweiz; rechtliche Angaben.</div>
-            <div class="product"><strong>Abgrenzungsdokument</strong> — rechtlich/technische Erklärung zur Nicht‑Kompatibilität.</div>
-          </div>
-        </section>
-
-        <section class="card" id="culture">
-          <h2>Kulturelle Bedeutung</h2>
-          <p>Die Genesis Node ist ein kulturelles Referenzobjekt: eine verifizierbare Quelle von Seed‑Informationen, Snapshots und Betriebsmetadaten, die zur Prüfung, Replikation und kritischen Reflexion einlädt. Durch offene Artefakte und reproduzierbare Prüfungen fördern wir eine Kultur der Transparenz und technischen Nachvollziehbarkeit.</p>
-          <p class="meta"><strong>Technische Kernaussagen:</strong> Jede Node ist ein dokumentierter Startpunkt. Artefakte sind öffentlich zugänglich und prüfbar. Timeline und Metadaten verankern die kulturelle Bedeutung.</p>
-
-          <h3>Produkte und Artefakte</h3>
-          <div class="products">
-            <div class="product"><strong>Timeline-Dokument</strong> — grafische und textuelle Chronologie (assets/images/timeline.png).</div>
-            <div class="product"><strong>Seed-Informationen</strong> — DNSSeed und Seed‑Listen.</div>
-            <div class="product"><strong>Audit-Snapshots</strong> — periodische, signierte Zustandsabbilder.</div>
-            <div class="product"><strong>Betriebsmetadaten</strong> — Geo‑IP, Impressum, Kontakt.</div>
-            <div class="product"><strong>GitHub-Repo</strong> — vollständige Dokumentation und Reproduktionsanleitungen (<code>[GITHUB_REPO_PLACEHOLDER]</code>).</div>
-          </div>
-        </section>
-
-        <section class="card" id="timeline">
-          <h2>Timeline</h2>
+          <h3>Aktuelle Artefakte</h3>
           <ul>
-            <li><strong>2009-01-03</strong> — Bitcoin Genesis Block (Satoshi)</li>
-            <li><strong>201x–202x</strong> — Forschung, Seed‑Erstellung und Artefakt‑Sammlung</li>
-            <li><strong>CoreCraft Genesis</strong> — Chain‑ID 200624, Genesis 0x00, audit-sealed Veröffentlichung</li>
+            <li><strong>Echo 25 – Loop Remnant</strong> — Poster ansehen | Manifest | Plaintext</li>
+            <li><strong>Satoshi // Absence as Origin</strong> — Poster ansehen | Manifest</li>
           </ul>
-          <p>Eine grafische Timeline kann in <code>assets/images/timeline.png</code> ergänzt werden, um historische Bezüge und Veröffentlichungsereignisse visuell darzustellen.</p>
+
+          <p class="small">Blockchain‑Ecosystem Entwicklung: Forschung, Prototyping, Audit‑Publikationen und langfristige Archivierung.</p>
+        </section>
+
+        <section class="card" id="chain2025">
+          <div class="section-title">
+            <h2>Chain2025 — Forschung & Entwicklung</h2>
+            <span class="small">Frameworks, Gateways, Sicherheits‑Baseline</span>
+          </div>
+
+          <p>Chain2025 ist das forschungsgetriebene Ökosystem für modulare Blockchain‑Entwicklung. Es liefert SDKs, Gateways, Indexer und reproduzierbare Artefakte, die audit‑sealed veröffentlicht werden. Die Architektur trennt Konsens, Datenverfügbarkeit und Ausführung, um gezielte Sicherheitsprüfungen und unabhängige Upgrades zu ermöglichen.</p>
+
+          <p class="meta"><strong>Produkte / Artefakte (Beispiele):</strong></p>
+          <div class="products">
+            <div class="product"><strong>chain2025.manifest.json</strong> — Chain‑Parameter, Genesis‑Metadaten, Hashes.</div>
+            <div class="product"><strong>SDK Releases</strong> — Rust/Go/TS mit Repro‑Build‑Manifests.</div>
+            <div class="product"><strong>Gateway Images</strong> — Container mit SBOM und Runtime‑Policies.</div>
+            <div class="product"><strong>Indexer Snapshots</strong> — signierte Index‑Dumps.</div>
+            <div class="product"><strong>Audit Logs</strong> — append‑only Ereignisprotokolle.</div>
+          </div>
+        </section>
+
+        <section class="card" id="mainchain-audio">
+          <div class="section-title">
+            <h2>Mainchain — Audio Engine</h2>
+            <span class="small">25 Jahre Optimierung · Hyperspace Tools</span>
+          </div>
+
+          <p>Die Mainchain beherbergt eine deterministische Audio‑Engine, die über 25 Jahre Forschung in Echtzeit‑Audio, psychoakustik und deterministischer Reproduktion bündelt. Jede Session erzeugt signierte Metadaten, die Reproduzierbarkeit und Lizenz‑Provenance sicherstellen. Die Engine ist für niedrige Latenz, sample‑accurate Sync und verteilte Verarbeitung ausgelegt.</p>
+
+          <p class="meta"><strong>Produkte / Artefakte (Audio):</strong></p>
+          <div class="products">
+            <div class="product"><strong>Engine Core</strong> — deterministischer DSP‑Kernel mit Repro‑Snapshots.</div>
+            <div class="product"><strong>Audio Manifest</strong> — signierte Session‑Metadaten.</div>
+            <div class="product"><strong>Hyperspace Runtime</strong> — containerisierte Audio‑Nodes.</div>
+            <div class="product"><strong>Sync Gateway</strong> — sample‑accurate Synchronisation.</div>
+            <div class="product"><strong>Provenance Ledger</strong> — append‑only Operation‑Hashes.</div>
+          </div>
+        </section>
+
+        <section class="card" id="edge">
+          <div class="section-title">
+            <h2>Edge‑Computing</h2>
+            <span class="small">SECO MX93, M100, SCADA, LoRaWAN, TLS</span>
+          </div>
+
+          <p>Edge‑Komponenten sind Teil der Infrastruktur für dezentrale Gateways, Telemetrie und lokale Verarbeitung. Sie ermöglichen resilienten Betrieb, Offline‑Fähigkeiten und sichere Datenweiterleitung in heterogenen Umgebungen. Standardisierte Sicherheitsprofile und signed firmware‑hashes sind Pflicht für produktive Edge‑Nodes.</p>
+
+          <div class="edge-list">
+            <div class="edge-item"><strong>SECO MX93</strong> — Industrie‑Gateway für robuste Feldanwendungen.</div>
+            <div class="edge-item"><strong>SECO M100</strong> — kompakte Edge‑Appliance für lokale Verarbeitung.</div>
+            <div class="edge-item"><strong>SCADA Integrationen</strong> — sichere Schnittstellen zu OT‑Systemen.</div>
+            <div class="edge-item"><strong>LoRaWAN</strong> — Low‑Power Telemetrie mit signed payloads.</div>
+            <div class="edge-item"><strong>TLS / mTLS</strong> — verschlüsselte Transportkanäle für Telemetrie und Steuerdaten.</div>
+          </div>
+        </section>
+
+        <section class="card" id="audit-transparency">
+          <div class="section-title">
+            <h2>Audit Transparency</h2>
+            <span class="small">Nachvollziehbare Prozesse und Artefakte</span>
+          </div>
+
+          <p>Transparenz ist Kernprinzip: Alle Prozesse, Releases und Moderationsentscheidungen werden append‑only protokolliert und mit Hashes versehen. Prüfskripte erlauben lokalen Vergleich zwischen veröffentlichten Manifests und heruntergeladenen Artefakten. Externe Archivierung (IPFS, S3‑WORM) sichert Langzeitverfügbarkeit.</p>
+
+          <p class="meta"><strong>Audit‑Workflow (Kurz):</strong> Build → Sign → Publish (IPFS optional) → Tag → Audit‑Log Eintrag.</p>
         </section>
 
         <section class="card" id="repo">
-          <h2>GitHub Repo und Kontakt</h2>
-          <p>Alle Daten sind öffentlich, überprüfbar und audit-sealed. Das zentrale Repository enthält Manifest, Snapshots, Prüfskripte und Reproduktionsanleitungen. Für rechtliche oder operative Fragen siehe Impressum und Kontaktangaben im Repository.</p>
-          <p class="meta">Empfohlene Links: <a href="[GITHUB_REPO_PLACEHOLDER]" target="_blank" rel="noopener">GitHub Repo</a> · <a href="https://node.corecraftgenesis.ch/" target="_blank" rel="noopener">node.corecraftgenesis.ch</a></p>
+          <h2>GitHub Repo & Kontakt</h2>
+          <p>Alle Artefakte, Prüfskripte und Reproduktionsanleitungen liegen im zentralen Repository. Ergänze Validator‑Adresse, IPFS‑CIDs und Release‑Hashes im Manifest vor der Veröffentlichung.</p>
+          <p class="meta">Empfohlene Links: <a href="https://github.com/corecraftgenesis/corecraft-genesis" target="_blank" rel="noopener">GitHub Repo</a> · <a href="https://node.corecraftgenesis.ch/" target="_blank" rel="noopener">node.corecraftgenesis.ch</a></p>
         </section>
       </main>
 
       <aside class="right">
         <div class="card">
-          <h3>Technische Eckdaten</h3>
-          <div class="meta">
-            <div><strong>Chain-ID:</strong> 200624</div>
-            <div><strong>Genesis-Timestamp:</strong> 0x00</div>
-            <div><strong>Validator-Adresse:</strong> <code>[VALIDATOR_ADDRESS_PLACEHOLDER]</code></div>
-            <div><strong>DNSSeed:</strong> dnsseed.corecraftgenesis.ch</div>
-            <div><strong>Standort:</strong> Effretikon, Schweiz</div>
+          <h3>Quick Panel</h3>
+
+          <div class="meta" style="margin-bottom:10px">
+            <div><strong>Module</strong> · Chain2025 / Mainchain / Hyperspace</div>
+            <div><strong>Validator-Adresse</strong> · <code>0xCAFEBABECAFEBABECAFEBABECAFEBABECAFEBABE</code></div>
+            <div><strong>DNSSeed</strong> · <code>dnsseed.corecraftgenesis.ch</code></div>
+            <div><strong>Standort</strong> · Effretikon, Schweiz</div>
           </div>
 
-          <h3 style="margin-top:12px">Sicherheits- und Betriebsanforderungen</h3>
+          <h3 style="margin-top:12px">Sicherheits- & Betriebsanforderungen</h3>
           <ul>
-            <li>HTTPS/TLS für alle Endpunkte; HSTS aktiviert.</li>
-            <li>Multi‑Sig oder Hardware‑Wallet für Validator‑Schlüssel.</li>
-            <li>Regelmäßige Schlüsselrotation und Offsite‑Backups.</li>
-            <li>RBAC für administrative Zugriffe; least privilege Prinzip.</li>
-            <li>Append‑only Audit‑Logs mit externer Archivierung (z. B. IPFS, S3‑WORM).</li>
+            <li>HTTPS/TLS + HSTS; DNSSEC für Seed‑Auflösung.</li>
+            <li>HSM / Hardware‑Wallet; Multi‑Sig Governance.</li>
+            <li>RBAC, least‑privilege Container Policies.</li>
+            <li>Append‑only Audit‑Logs; externe Archivierung (IPFS/S3‑WORM).</li>
+            <li>Repro‑Builds, SBOMs und deterministic toolchains.</li>
           </ul>
 
-          <h3 style="margin-top:12px">Audit Aktionen</h3>
+          <h3 style="margin-top:12px">Aktionen</h3>
           <div class="actions">
             <button onclick="exportAudit('json')">Export JSON</button>
             <button onclick="exportAudit('yaml')">Export YAML</button>
@@ -176,14 +194,25 @@
           </div>
 
           <div style="margin-top:12px;color:var(--muted);font-size:12px">
-            Hinweis: Commits im Git-Repo sollten getaggt und mit Release-Hashes referenziert werden, um maximale Nachvollziehbarkeit zu gewährleisten.
+            Hinweis: Commits im Git‑Repo sollten getaggt und mit Release‑Hashes referenziert werden.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Blog & Wissensplattform</h3>
+          <p class="small">Fachartikel, Tutorials, Updates — zentralisiert auf CoreCraft Genesis Blog und Medium.</p>
+
+          <div class="embed-medium">
+            <!-- Medium embed: set your publication feed or direct URL below -->
+            <iframe src="https://medium.com/feed/corecraftgenesis" title="Chain2025 on Medium" style="width:100%;height:260px;border:0;border-radius:6px;background:#071018" sandbox="allow-scripts allow-same-origin"></iframe>
+            <p style="margin-top:8px;color:var(--muted)">Wenn das Embed nicht geladen wird, öffne die Publication direkt: <a href="https://medium.com/corecraftgenesis" target="_blank" rel="noopener">Medium: Chain2025</a></p>
           </div>
         </div>
       </aside>
     </div>
 
     <footer>
-      <p>Dieses Dokument basiert auf dem Contributor Covenant v2.0 und wurde erweitert um auditierbare, technische Prinzipien für die CoreCraft Genesis Node. Änderungen werden append-only protokolliert.</p>
+      <p>Dieses Dokument basiert auf dem Contributor Covenant v2.0 und wurde erweitert um auditierbare, technische Prinzipien für Chain2025, die Mainchain Audio Engine und Hyperspace Tools. Änderungen werden append‑only protokolliert.</p>
     </footer>
   </div>
 
@@ -223,37 +252,20 @@
     }
 
     // initial events
-    logEvent('boot', 'CoreCraft Genesis Node Dokument geladen');
-    logEvent('manifest', 'genesis.json erwartet; bitte Validator-Adresse und Signaturen ergänzen');
+    logEvent('boot', 'Chain2025 Viewer geladen');
+    logEvent('manifest', 'Bitte Validator-Adresse, Canva/Design-Link, Medium-URL und GitHub-Repo prüfen und ggf. ersetzen');
   </script>
 
   <!--
-    Optionaler GitHub Actions CI Hinweis (kopieren in .github/workflows/deploy.yml)
-    ----------------------------------------
-    name: Deploy CoreCraft Node Site
-    on:
-      push:
-        branches: [ main ]
-      workflow_dispatch:
-    jobs:
-      build-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-          - name: Build (optional)
-            run: echo "No build step required for static site"
-          - name: Deploy to server via rsync
-            env:
-              SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-            run: |
-              mkdir -p ~/.ssh
-              echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-              chmod 600 ~/.ssh/id_rsa
-              rsync -avz --delete ./ user@your.server:/var/www/node.corecraftgenesis.ch/
-    ----------------------------------------
-    Hinweise:
-    - Setze secrets.DEPLOY_SSH_KEY in GitHub Secrets.
-    - Alternativ: nutze GitHub Pages, Netlify oder Vercel für automatisches Deployment.
+    Deployment / CI Hinweise (optional)
+    - Ersetze Beispielwerte:
+      Validator-Adresse: 0xCAFEBABE... -> echte Validator-Adresse
+      GitHub Repo: https://github.com/corecraftgenesis/corecraft-genesis -> dein Repo
+      IPFS-CIDs: füge reale CIDs in genesis.json und hier ein
+      Canva Link: bereits gesetzt; ersetze falls nötig
+      Medium Embed: ggf. Feed-URL anpassen
+    - HTTPS/TLS + HSTS aktivieren.
+    - CI/CD: Tagging, SBOM, Signaturen, IPFS pinning und Audit‑Event Publikation automatisieren.
   -->
 </body>
 </html>
