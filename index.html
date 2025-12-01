@@ -1,109 +1,259 @@
 <!doctype html>
-<link rel="stylesheet" href="styles/dark.css">
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>CoreCraft Genesis Node – Audit-sealed Referenz</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Audit-sealed Genesis Validator, Artefakte, Chain-Snapshots und transparente Nachweise.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CoreCraft Genesis Node — Audit-sealed Genesis Validator</title>
+  <meta name="description" content="CoreCraft Genesis Node — Audit-sealed Genesis Validator, Standort Effretikon, Schweiz. Transparente Artefakte, Snapshots und reproduzierbare Prüfwerte." />
+  <style>
+    :root{
+      --bg:#0f1316; --panel:#15191d; --muted:#9aa6b3; --text:#e6eef6; --accent:#8fb0d6; --line:#23282d;
+      --card:#171b20; --chip:#20262b; --good:#89b38a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;padding:28px}
+    .wrap{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:flex-start;gap:18px;margin-bottom:18px}
+    header h1{margin:0;font-size:20px;color:var(--accent)}
+    header p{margin:2px 0 0;color:var(--muted)}
+    .card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:14px}
+    h2{color:var(--accent);margin:0 0 8px}
+    h3{color:var(--muted);margin:0 0 8px}
+    p{margin:8px 0;color:var(--text);line-height:1.45}
+    ul{margin:8px 0 12px 18px;color:var(--text)}
+    li{margin:6px 0}
+    .meta{font-family:ui-monospace,monospace;color:var(--muted);font-size:13px;background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.02)}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:14px}
+    .right .card{position:sticky;top:28px}
+    .audit-log{background:#0b0f12;border:1px solid #1f262b;padding:10px;border-radius:8px;color:var(--muted);font-family:ui-monospace,monospace;font-size:13px;max-height:320px;overflow:auto}
+    .actions{display:flex;gap:8px;margin-top:10px}
+    button{background:#1f262b;color:var(--text);border:1px solid #2b3339;padding:8px 10px;border-radius:6px;cursor:pointer}
+    button:hover{background:#2b3339}
+    a{color:var(--accent);text-decoration:none}
+    .products{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .product{background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.02);font-size:14px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .notice{background:#0e1620;border-left:4px solid var(--accent);padding:10px;border-radius:6px;margin-bottom:12px;color:var(--muted)}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}.right .card{position:static}}
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <div class="titles">
+  <div class="wrap">
+    <header>
+      <div>
         <h1>CoreCraft Genesis Node</h1>
-        <p class="subtitle">Audit-sealed Genesis Validator – Standort Effretikon, Schweiz</p>
+        <p>Audit-sealed Genesis Validator — Standort Effretikon, Schweiz. Transparente Artefakte, Snapshots und reproduzierbare Prüfwerte.</p>
       </div>
+    </header>
+
+    <div class="notice">
+      <strong>Wichtig</strong> Ersetze alle Platzhalter (Validator‑Adresse, IPFS‑CIDs, GitHub‑Links) bevor die Seite live geht. Stelle sicher, dass HTTPS/TLS aktiviert ist und die Seite über HSTS ausgeliefert wird.
     </div>
-    <a class="cta" href="#artefakte">Artefakte prüfen</a>
-  </header>
 
-  <main>
-    <!-- Einführung -->
-    <section class="intro">
-      <h2>Einführung</h2>
-      <p>Unsere Genesis Node ist ein transparentes, audit-sealed Referenzobjekt. Jeder kann die Artefakte herunterladen, lokal prüfen und die Ergebnisse mit unseren veröffentlichten Prüfwerten abgleichen. Ziel ist keine absolute Autorität, sondern ein nachvollziehbares, prüfbares Archiv einer dokumentierten Perspektive auf die Chain.</p>
-    </section>
+    <div class="grid">
+      <main>
+        <section class="card" id="intro">
+          <h2>Einführung</h2>
+          <p>Unsere Genesis Node ist ein transparentes, audit-sealed Referenzobjekt, das als verifizierbarer Startpunkt der Chain dient. Jede veröffentlichte Datei ist mit kryptographischen Hashes versehen, sodass jede Prüferin und jeder Prüfer lokal die Integrität der Artefakte bestätigen kann. Die Veröffentlichung verfolgt das Ziel, ein nachvollziehbares, prüfbares Archiv bereitzustellen, nicht eine zentrale Autorität.</p>
+          <p class="meta"><strong>Technische Kernaussagen:</strong> Jede Artefaktdatei ist signiert und mit Hashwerten versehen. Prüfungen sind lokal reproduzierbar und dokumentiert. Ergebnisse werden in einem append-only Audit-Log festgehalten.</p>
 
-    <!-- Historischer Bezug -->
-    <section class="history">
-      <h2>Historischer Bezug: Bitcoin Genesis Block</h2>
-      <p>Der erste Genesis Block der Bitcoin-Blockchain wurde am 3. Januar 2009 von Satoshi Nakamoto erzeugt. Er bildet den kulturellen und technischen Ursprung des Netzwerks. Unsere Genesis Node steht in dieser Tradition: klar definierter Startpunkt, dokumentiert durch Chain-ID, Genesis-Timestamp und Validator-Logik.</p>
-    </section>
+          <h3>Produkte und Artefakte</h3>
+          <div class="products">
+            <div class="product"><strong>Manifest</strong> — <code>genesis.json</code> mit Chain-ID, Parametern und Metadaten.</div>
+            <div class="product"><strong>Audit-sealed IP-Logs</strong> — zeitgestempelte Verbindungsprotokolle für Replikation.</div>
+            <div class="product"><strong>Hardwarebeschreibung</strong> — CPU, RAM, Storage, Netzwerktopologie, Firmware‑Hashes.</div>
+            <div class="product"><strong>Chain-Snapshots</strong> — versionierte Zustandsabbilder mit Hashes.</div>
+            <div class="product"><strong>IPFS-CIDs</strong> — optionale externe Referenzen zur Verifikation.</div>
+          </div>
+        </section>
 
-    <!-- Technische Eckdaten -->
-    <section class="tech">
-      <h2>Technische Eckdaten</h2>
-      <div class="kv">
-        <div><span class="k">Chain-ID:</span><span class="v">200624</span></div>
-        <div><span class="k">Genesis-Timestamp:</span><span class="v">0x00</span></div>
-        <div><span class="k">Validator-Adresse:</span><span class="v">[Adresse hier einfügen]</span></div>
-        <div><span class="k">DNSSeed:</span><span class="v">dnsseed.corecraftgenesis.ch</span></div>
-        <div><span class="k">Standort:</span><span class="v">Effretikon, Schweiz</span></div>
-      </div>
-      <p class="note">Hinweis: Bei Standortwechsel bitte Artefakte und Metadaten aktualisieren (z. B. Geo-IP, IP-Logs, Impressum).</p>
-    </section>
+        <section class="card" id="historical">
+          <h2>Historischer Bezug</h2>
+          <p>Der Bitcoin Genesis Block (3. Januar 2009) ist der kulturelle und technische Ursprung vieler Blockchain‑Projekte. Unsere Genesis Node folgt dieser Tradition, indem sie einen klar definierten Startpunkt dokumentiert, der durch Chain‑ID, Genesis‑Timestamp und Validator‑Logik festgelegt ist. Diese Dokumentation ermöglicht historische Nachvollziehbarkeit und technische Reproduzierbarkeit.</p>
+          <p class="meta"><strong>Technische Kernaussagen:</strong> Der Genesis‑Zustand ist unveränderlich dokumentiert. Zeitstempel und Parameter sind Teil der auditierbaren Metadaten. Validator‑Logik stellt Konsistenz der ersten Blöcke sicher.</p>
 
-    <!-- Injektion / Einspeisung -->
-    <section class="injection">
-      <h2>Injektion audit-sealed Artefakte</h2>
-      <p>Unter Injektion verstehen wir die gezielte Einspeisung von Seed-Informationen, Snapshots und Artefakten ins Netzwerk. Diese Artefakte bilden einen Vertrauensanker: Sie sind öffentlich, lokal prüfbar und mit unseren Prüfwerten abgleichbar.</p>
-      <ul class="bullets">
-        <li><strong>IP-Logs:</strong> Öffentliche, zeitgestempelte Verbindungsprotokolle</li>
-        <li><strong>Hardwarebeschreibung:</strong> CPU, RAM, Storage, Netzwerktopologie</li>
-        <li><strong>Chain-Snapshots:</strong> Versionierte Zustandsabbilder</li>
-        <li><strong>Manifest:</strong> genesis.json mit Chain-ID, Parametern und Genesis-Metadaten</li>
-      </ul>
-    </section>
+          <h3>Produkte und Artefakte</h3>
+          <div class="products">
+            <div class="product"><strong>Chain-ID</strong> — <code>200624</code> (eindeutige Kennung).</div>
+            <div class="product"><strong>Genesis-Timestamp</strong> — <code>0x00</code> (audit-sealed).</div>
+            <div class="product"><strong>Validator-Adresse</strong> — <code>[VALIDATOR_ADDRESS_PLACEHOLDER]</code> (eintragen und signieren).</div>
+            <div class="product"><strong>DNSSeed</strong> — <code>dnsseed.corecraftgenesis.ch</code> für Seed‑Verteilung.</div>
+            <div class="product"><strong>Standort-Metadaten</strong> — Effretikon, Schweiz; Geo‑IP und Impressumsdaten.</div>
+          </div>
+        </section>
 
-    <!-- Artefakte & Nachweise -->
-    <section id="artefakte" class="artefacts">
-      <h2>Artefakte und Nachweise</h2>
-      <div class="links">
-        <a href="assets/manifests/genesis.json" download>Manifest: genesis.json</a>
-        <a href="assets/artefacts/ip-logs/" target="_blank">Audit-sealed IP-Logs</a>
-        <a href="assets/artefacts/hardware.txt" target="_blank">Hardwarebeschreibung</a>
-        <a href="assets/artefacts/snapshots/" target="_blank">Chain-Snapshots</a>
-        <a href="assets/artefacts/cids.txt" target="_blank">IPFS-CIDs (optional)</a>
-      </div>
-      <p class="note">Für maximale Auditfestigkeit: Commits taggen, Hashes referenzieren, optional IPFS pinnen und externe Signaturen beilegen.</p>
-    </section>
+        <section class="card" id="injection">
+          <h2>Injektion audit-sealed Artefakte</h2>
+          <p>Injektion bezeichnet die kontrollierte Einspeisung von Seed‑Informationen, Snapshots und Artefakten in das Netzwerk. Jede Injektion ist öffentlich, lokal prüfbar und mit unseren Prüfwerten abgleichbar, sodass sie als Vertrauensanker fungiert. Injektionen erzeugen automatisch Audit‑Einträge, die unveränderlich gespeichert werden.</p>
+          <p class="meta"><strong>Technische Kernaussagen:</strong> Seed‑Informationen werden über DNSSeed verteilt. Snapshots sind versioniert und mit Hashes versehen. Jede Injektion erzeugt einen append-only Audit‑Eintrag.</p>
 
-    <!-- Abgrenzung -->
-    <section class="separation">
-      <h2>Abgrenzung zu „Mars-networks ares-1“</h2>
-      <p>Dieses Projekt ist eigenständig und rechtlich wie technisch klar vom Mars-networks-Testnet „ares-1“ abgegrenzt. Unsere Chain-ID, Genesis-Parameter und Validatorstruktur sind individuell definiert und audit-sealed dokumentiert.</p>
-    </section>
+          <h3>Produkte und Artefakte</h3>
+          <div class="products">
+            <div class="product"><strong>Öffentliche IP-Logs</strong> — zeitgestempelte Verbindungsprotokolle mit Hashes.</div>
+            <div class="product"><strong>Systemprofil</strong> — detaillierte Hardwarebeschreibung und Firmware‑Hashes.</div>
+            <div class="product"><strong>Chain-Snapshots</strong> — vollständige Zustandsabbilder, versioniert.</div>
+            <div class="product"><strong>Manifest</strong> — <code>genesis.json</code> (audit-sealed, signiert).</div>
+            <div class="product"><strong>Externe Signaturen</strong> — optionale Signaturen Dritter zur zusätzlichen Verifikation.</div>
+          </div>
+        </section>
 
-    <!-- Kulturelle Bedeutung -->
-    <section class="culture">
-      <h2>Kulturelle Bedeutung</h2>
-      <p>Die Genesis Node ist ein kulturelles Referenzobjekt: eine eindeutig benannte, verifizierbare Quelle von Seed-Informationen, Snapshots und Betriebsmetadaten, die zur Prüfung, Replikation und kritischen Reflexion einlädt.</p>
-    </section>
+        <section class="card" id="separation">
+          <h2>Abgrenzung</h2>
+          <p>Dieses Projekt ist technisch und rechtlich klar vom Mars‑networks Testnet „ares-1“ abgegrenzt. Unsere Chain‑ID, Genesis‑Parameter und Validatorstruktur sind eigenständig definiert und audit-sealed dokumentiert, sodass keine Verwechslung oder unbeabsichtigte Kompatibilität entsteht. Abgrenzungsdokumente sind Teil der veröffentlichten Artefakte.</p>
+          <p class="meta"><strong>Technische Kernaussagen:</strong> Jede Chain hat eigene Parameter und IDs. Validatorstrukturen sind nicht übertragbar. Artefakte sind eindeutig und nicht kompatibel mit fremden Netzwerken.</p>
 
-    <!-- Timeline (optional visual) -->
-    <section class="timeline">
-      <h2>Timeline: Von Bitcoin Genesis zu CoreCraft Genesis</h2>
-      <ul class="timeline-list">
-        <li><strong>2009-01-03:</strong> Bitcoin Genesis Block (Satoshi)</li>
-        <li><strong>201x–202x:</strong> Eigene Forschung, Seed & Artefakte</li>
-        <li><strong>CoreCraft Genesis:</strong> Chain-ID 200624, Genesis 0x00, audit-sealed Veröffentlichung</li>
-      </ul>
-      <p class="note">Eine grafische Timeline kann in assets/images/timeline.png ergänzt werden.</p>
-    </section>
-  </main>
+          <h3>Produkte und Artefakte</h3>
+          <div class="products">
+            <div class="product"><strong>CoreCraft Chain-ID</strong> — <code>200624</code> (eindeutig).</div>
+            <div class="product"><strong>Genesis-Parameter</strong> — dokumentierte Konsensus- und Netzwerkparameter.</div>
+            <div class="product"><strong>Validator-Logs</strong> — audit-sealed Betriebsprotokolle.</div>
+            <div class="product"><strong>Standort-Metadaten</strong> — Effretikon, Schweiz; rechtliche Angaben.</div>
+            <div class="product"><strong>Abgrenzungsdokument</strong> — rechtlich/technische Erklärung zur Nicht‑Kompatibilität.</div>
+          </div>
+        </section>
 
-  <footer class="footer">
-    <nav>
-      <a href="https://github.com/your-org/corecraft-genesis-node" target="_blank">GitHub-Repo</a>
-      <span class="sep">|</span>
-      <a href="assets/docs/index.html" target="_blank">Dokumentation</a>
-      <span class="sep">|</span>
-      <a href="assets/impressum.html" target="_blank">Kontakt / Impressum</a>
-    </nav>
-    <p class="disclaimer">Alle Daten sind öffentlich, überprüfbar und audit-sealed.</p>
-  </footer>
+        <section class="card" id="culture">
+          <h2>Kulturelle Bedeutung</h2>
+          <p>Die Genesis Node ist ein kulturelles Referenzobjekt: eine verifizierbare Quelle von Seed‑Informationen, Snapshots und Betriebsmetadaten, die zur Prüfung, Replikation und kritischen Reflexion einlädt. Durch offene Artefakte und reproduzierbare Prüfungen fördern wir eine Kultur der Transparenz und technischen Nachvollziehbarkeit.</p>
+          <p class="meta"><strong>Technische Kernaussagen:</strong> Jede Node ist ein dokumentierter Startpunkt. Artefakte sind öffentlich zugänglich und prüfbar. Timeline und Metadaten verankern die kulturelle Bedeutung.</p>
+
+          <h3>Produkte und Artefakte</h3>
+          <div class="products">
+            <div class="product"><strong>Timeline-Dokument</strong> — grafische und textuelle Chronologie (assets/images/timeline.png).</div>
+            <div class="product"><strong>Seed-Informationen</strong> — DNSSeed und Seed‑Listen.</div>
+            <div class="product"><strong>Audit-Snapshots</strong> — periodische, signierte Zustandsabbilder.</div>
+            <div class="product"><strong>Betriebsmetadaten</strong> — Geo‑IP, Impressum, Kontakt.</div>
+            <div class="product"><strong>GitHub-Repo</strong> — vollständige Dokumentation und Reproduktionsanleitungen (<code>[GITHUB_REPO_PLACEHOLDER]</code>).</div>
+          </div>
+        </section>
+
+        <section class="card" id="timeline">
+          <h2>Timeline</h2>
+          <ul>
+            <li><strong>2009-01-03</strong> — Bitcoin Genesis Block (Satoshi)</li>
+            <li><strong>201x–202x</strong> — Forschung, Seed‑Erstellung und Artefakt‑Sammlung</li>
+            <li><strong>CoreCraft Genesis</strong> — Chain‑ID 200624, Genesis 0x00, audit-sealed Veröffentlichung</li>
+          </ul>
+          <p>Eine grafische Timeline kann in <code>assets/images/timeline.png</code> ergänzt werden, um historische Bezüge und Veröffentlichungsereignisse visuell darzustellen.</p>
+        </section>
+
+        <section class="card" id="repo">
+          <h2>GitHub Repo und Kontakt</h2>
+          <p>Alle Daten sind öffentlich, überprüfbar und audit-sealed. Das zentrale Repository enthält Manifest, Snapshots, Prüfskripte und Reproduktionsanleitungen. Für rechtliche oder operative Fragen siehe Impressum und Kontaktangaben im Repository.</p>
+          <p class="meta">Empfohlene Links: <a href="[GITHUB_REPO_PLACEHOLDER]" target="_blank" rel="noopener">GitHub Repo</a> · <a href="https://node.corecraftgenesis.ch/" target="_blank" rel="noopener">node.corecraftgenesis.ch</a></p>
+        </section>
+      </main>
+
+      <aside class="right">
+        <div class="card">
+          <h3>Technische Eckdaten</h3>
+          <div class="meta">
+            <div><strong>Chain-ID:</strong> 200624</div>
+            <div><strong>Genesis-Timestamp:</strong> 0x00</div>
+            <div><strong>Validator-Adresse:</strong> <code>[VALIDATOR_ADDRESS_PLACEHOLDER]</code></div>
+            <div><strong>DNSSeed:</strong> dnsseed.corecraftgenesis.ch</div>
+            <div><strong>Standort:</strong> Effretikon, Schweiz</div>
+          </div>
+
+          <h3 style="margin-top:12px">Sicherheits- und Betriebsanforderungen</h3>
+          <ul>
+            <li>HTTPS/TLS für alle Endpunkte; HSTS aktiviert.</li>
+            <li>Multi‑Sig oder Hardware‑Wallet für Validator‑Schlüssel.</li>
+            <li>Regelmäßige Schlüsselrotation und Offsite‑Backups.</li>
+            <li>RBAC für administrative Zugriffe; least privilege Prinzip.</li>
+            <li>Append‑only Audit‑Logs mit externer Archivierung (z. B. IPFS, S3‑WORM).</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Audit Aktionen</h3>
+          <div class="actions">
+            <button onclick="exportAudit('json')">Export JSON</button>
+            <button onclick="exportAudit('yaml')">Export YAML</button>
+            <button onclick="markAudit()">Audit Marker</button>
+          </div>
+
+          <div style="margin-top:12px" class="audit-log" id="auditLog" aria-live="polite">
+            <!-- Audit entries appear here -->
+          </div>
+
+          <div style="margin-top:12px;color:var(--muted);font-size:12px">
+            Hinweis: Commits im Git-Repo sollten getaggt und mit Release-Hashes referenziert werden, um maximale Nachvollziehbarkeit zu gewährleisten.
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Dieses Dokument basiert auf dem Contributor Covenant v2.0 und wurde erweitert um auditierbare, technische Prinzipien für die CoreCraft Genesis Node. Änderungen werden append-only protokolliert.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Simple client-side audit log (append-only)
+    const audit = [];
+    function renderAuditEntry(e){
+      const el = document.createElement('div');
+      el.textContent = `${e.ts} | ${e.type} | ${e.detail}`;
+      document.getElementById('auditLog').appendChild(el);
+      document.getElementById('auditLog').scrollTop = document.getElementById('auditLog').scrollHeight;
+    }
+    function logEvent(type, detail){
+      const entry = { ts: new Date().toISOString(), type, detail, module: 'corecraft_genesis' };
+      audit.push(entry);
+      renderAuditEntry(entry);
+      console.info('audit', entry);
+    }
+    function markAudit(){
+      logEvent('marker', 'Manueller Audit‑Marker gesetzt');
+    }
+    function exportAudit(format){
+      let content = '';
+      if(format === 'json'){
+        content = JSON.stringify(audit, null, 2);
+      } else {
+        content = 'audit:\\n' + audit.map(e =>
+          `  - ts: ${e.ts}\\n    type: ${e.type}\\n    detail: ${JSON.stringify(e.detail)}\\n    module: ${e.module}`
+        ).join('\\n');
+      }
+      const blob = new Blob([content], { type: format === 'json' ? 'application/json' : 'text/yaml' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `corecraft_audit_${new Date().toISOString().replace(/[:.]/g,'-')}.${format}`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    // initial events
+    logEvent('boot', 'CoreCraft Genesis Node Dokument geladen');
+    logEvent('manifest', 'genesis.json erwartet; bitte Validator-Adresse und Signaturen ergänzen');
+  </script>
+
+  <!--
+    Optionaler GitHub Actions CI Hinweis (kopieren in .github/workflows/deploy.yml)
+    ----------------------------------------
+    name: Deploy CoreCraft Node Site
+    on:
+      push:
+        branches: [ main ]
+      workflow_dispatch:
+    jobs:
+      build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - name: Build (optional)
+            run: echo "No build step required for static site"
+          - name: Deploy to server via rsync
+            env:
+              SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+            run: |
+              mkdir -p ~/.ssh
+              echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+              chmod 600 ~/.ssh/id_rsa
+              rsync -avz --delete ./ user@your.server:/var/www/node.corecraftgenesis.ch/
+    ----------------------------------------
+    Hinweise:
+    - Setze secrets.DEPLOY_SSH_KEY in GitHub Secrets.
+    - Alternativ: nutze GitHub Pages, Netlify oder Vercel für automatisches Deployment.
+  -->
 </body>
 </html>
